@@ -10,24 +10,25 @@ import SwiftUI
 @Observable
 class ViewModel {
     var lists: [ItemList] = [
-        // Note: You could add some mock lists here to make testing easy.
     ]
     
     init() {}
     
     // MARK: - User Intents
-    /// Creates a new empty ItemList with the given name.
+    /// Create a new empty list.
     func createList(name: String) {
-        // TODO: Complete this function.
+        let list: ItemList = .init(name: name, items: [])
+        
+        lists.append(list)
     }
     
-    /// Adds an item with the given name to an ItemList.
+    /// Add item to a list.
     func addItem(to list: ItemList, name: String) {
-        // TODO: Complete this function.
+        list.addItem(name)
     }
     
-    /// Toggle an item as complete or incomplete.
+    /// Toggle an item as complete.
     func toggleItemAsCompleted(_ item: ItemList.Item, list: ItemList) {
-        // TODO: Complete this function.
+        list.toggleItemAsCompleted(item)
     }
 }
